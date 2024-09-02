@@ -1,0 +1,338 @@
+/* Global Styles */
+body[data-theme="light"] {
+    background-color: #e6f2ff;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body[data-theme="dark"] {
+    background-color: #1a1a2e;
+    color: #ddd;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(90deg, #1e90ff, #00bfff);
+    color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+/* #toggleTheme {
+    background: #00bfff;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#toggleTheme:hover {
+    background: #1e90ff;
+    transform: translateY(-2px);
+} */
+
+/* Container Styles */
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 20px;
+}
+
+#all-song-div, #card-div, #playlist-div {
+    width: 30%;
+    background: rgb(24, 122, 234);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 20px;
+}
+
+/* Specific Button Styles */
+/* Container for the Toggle Switch */
+#toggleThemeContainer {
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+    position: relative;
+}
+
+/* Toggle Switch Button */
+#toggleTheme {
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #00bfff, #1e90ff);
+    position: absolute;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Toggle Button Circle */
+#toggleTheme::before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: white;
+    transition: left 0.3s ease;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* When the Button is Active (Dark Mode) */
+body[data-theme="dark"] #toggleTheme {
+    background: linear-gradient(135deg, #1e90ff, #00bfff);
+}
+
+body[data-theme="dark"] #toggleTheme::before {
+    left: 33px;
+}
+
+/* Song List and Playlist Styles */
+#songList button, #allPlaylists button {
+    margin-top: 50px;
+    display: block;
+    width: 100%;
+    margin: 5px 0;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #1e90ff, #00bfff);
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#songList button:hover, #allPlaylists button:hover {
+    transform: translateY(-3px);
+    background-color: #1e90ff;
+}
+
+/* Song Card Styles */
+#currentSong {
+    text-align: center;
+}
+
+#songImage {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+}
+
+#songName {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+#artistName {
+    font-size: 1.2em;
+    color: #555;
+}
+
+audio {
+    width: 100%;
+    margin: 10px 0;
+}
+
+#prevSong, #nextSong, #addToPlaylist {
+    padding: 10px 20px;
+    margin: 10px 5px;
+    background: #00bfff;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#prevSong:hover, #nextSong:hover, #addToPlaylist:hover {
+    background: #1e90ff;
+    transform: translateY(-2px);
+}
+
+/* Playlist Creation Styles */
+#playlistName {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+#createPlaylist {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #1e90ff, #00bfff);
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#createPlaylist:hover {
+    transform: translateY(-3px);
+    background-color: #1e90ff;
+}
+
+/* General Button Styles */
+button {
+    margin-top: 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50px; /* Rounded buttons */
+    font-size: 1em;
+    font-weight: bold;
+    padding: 12px 25px; /* Increased padding for better appearance */
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #1e90ff, #00bfff); /* Blue gradient */
+    color: white;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1); /* Soft shadow for elevation */
+}
+
+/* Hover Effects for Buttons */
+button:hover {
+    background: linear-gradient(135deg, #00bfff, #1e90ff); /* Reversed gradient on hover */
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+    transform: translateY(-5px); /* Slight lift effect */
+}
+
+button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: left 0.3s ease;
+    z-index: 0;
+}
+
+button:hover::before {
+    left: 100%;
+}
+
+
+
+#prevSong, #nextSong, #addToPlaylist {
+    padding: 12px 30px;
+    margin: 10px 5px;
+    background: linear-gradient(135deg, #1e90ff, #00bfff);
+    color: white;
+    border-radius: 50px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+#prevSong:hover, #nextSong:hover, #addToPlaylist:hover {
+    background: linear-gradient(135deg, #00bfff, #1e90ff);
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);
+}
+
+#createPlaylist {
+    padding: 15px;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #1e90ff, #00bfff);
+    color: white;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+#createPlaylist:hover {
+    background: linear-gradient(135deg, #00bfff, #1e90ff);
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);
+}
+
+/* Container for the select to position the custom arrow */
+.select-container {
+    position: relative;
+    width: 100%;
+}
+
+/* Dropdown Styles */
+#genre-select {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 1em;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #1e90ff, #00bfff);
+    appearance: none; /* Hides the default arrow */
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Custom Arrow */
+.select-container::after {
+    content: "\25BC"; /* Unicode character for down arrow */
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    font-size: 0.8em;
+    color: white;
+    pointer-events: none; /* Prevents the arrow from blocking clicks */
+}
+
+/* Hover and Focus Effects */
+#genre-select:hover,
+#genre-select:focus {
+    background: linear-gradient(135deg, #00bfff, #1e90ff);
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Option Styles */
+#genre-select option {
+    background: white;
+    color: #333;
+    padding: 10px;
+}
+
+
+/* Input Field Styles */
+#playlist-name {
+    width: 80%;
+    padding: 12px 20px;
+    font-size: 1em;
+    color: #333;
+    border: 2px solid #00bfff; /* Blue outline */
+    border-radius: 30px;
+    background-color: #f0f8ff; /* Light blue background */
+    outline: none; /* Remove default outline */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+/* Hover Effect */
+#playlist-name:hover {
+    border-color: #1e90ff; /* Darker blue on hover */
+    background-color: #e6f2ff; /* Slightly darker blue background on hover */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow on hover */
+}
+
+/* Focus Effect */
+#playlist-name:focus {
+    border-color: #1e90ff; /* Darker blue when focused */
+    background-color: #e6f2ff; /* Slightly darker blue background on focus */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); /* More pronounced shadow when focused */
+}
